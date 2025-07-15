@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 # Path to folder with XML files
-xml_folder = r'C:\Users\ESCARIZ\Desktop\XML_testes'
+xml_folder = r'C:\Users\ESC-CMO13\Desktop\downloadXML\XMLs\xml_output\55'
 
 # Define the XML namespace
 ns = {'nfe': 'http://www.portalfiscal.inf.br/nfe'}
@@ -17,7 +17,8 @@ fields = {
     'xNome': './/nfe:emit/nfe:xNome',
     'dhEmi': './/nfe:ide/nfe:dhEmi',
     'nNF': './/nfe:ide/nfe:nNF',
-    'chNFe': './/nfe:protNFe/nfe:infProt/nfe:chNFe'
+    'chNFe': './/nfe:protNFe/nfe:infProt/nfe:chNFe',
+    'cfop': './/nfe:det/nfe:prod/nfe:CFOP'
 }
 
 # Get list of XML files

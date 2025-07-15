@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import os
 from datetime import datetime
 
-xml_folder = r'C:\Users\ESCARIZ\Desktop\XML_testes'
+xml_folder = r'C:\Users\ESC-CMO13\Desktop\downloadXML\xml_output\unknown'
 ns = {
     'cte': 'http://www.portalfiscal.inf.br/cte',
     'ds': 'http://www.w3.org/2000/09/xmldsig#'
