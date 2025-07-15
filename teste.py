@@ -46,7 +46,7 @@ for e_id in all_email_ids:
             if filename:
                 attachments.append((filename, part))
 
-    # ✅ Only process if exactly 2 attachments
+    #  process this independent of the quantity of the attachements
     sender = msg.get("From", "(Unknown sender)")
     subject = msg.get("Subject", "(No Subject)")
     print(f"Processing email from {sender}, subject: '{subject}'")
