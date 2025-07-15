@@ -5,12 +5,12 @@ import os
 # === CONFIGURATION ===
 EMAIL = "your_email@gmail.com"
 PASSWORD = "your_app_password"
-IMAP_SERVER = ""
+IMAP_SERVER = "mail.escariz.com.br"
 SENDERS = ["alice@example.com", "bob@example.com"]
 SAVE_DIR = "attachments"
 
 # === CONNECT TO SERVER ===
-mail = imaplib.IMAP4_SSL(IMAP_SERVER)
+mail = imaplib.IMAP4_SSL(465)
 mail.login(EMAIL, PASSWORD)
 mail.select("inbox")
 
@@ -47,17 +47,13 @@ for e_id in all_email_ids:
                 attachments.append((filename, part))
 
     # ✅ Only process if exactly 2 attachments
-    if len(attachments) == 2:
-        sender = msg.get("From", "(Unknown sender)")
-        subject = msg.get("Subject", "(No Subject)")
-        print(f"Processing email from {sender}, subject: '{subject}'")
+    sender = msg.get("From", "(Unknown sender)")
+    subject = msg.get("Subject", "(No Subject)")
+    print(f"Processing email from {sender}, subject: '{subject}'")
 
-        for filename, part in attachments:
-            filepath = os.path.join(SAVE_DIR, filename)
-            with open(filepath, "wb") as f:
-                f.write(part.get_payload(decode=True))
-            print(f"Saved: {filename}")
-    else:
-        print(f"Skipping email — it has {len(attachments)} attachment(s).")
-
+    for filename, part in attachments:
+        filepath = os.path.join(SAVE_DIR, filename)
+        with open(filepath, "wb") as f:
+            f.write(part.get_payload(decode=True))
+        print(f"Saved: {filename}")
 mail.logout()
