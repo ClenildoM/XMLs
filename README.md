@@ -1,4 +1,2 @@
 # XMLs
-Foram feitas modificações e tratamentos dos dados de acordo com a necessidade;
-Foram buscados os valores de CFOPs para descobrir se a NFe era necessária ou não;
-Foi criado um arquivo txt para salvar a última data da qual foi realizado o download dos xmls;
+Foram feitas modificações e tratamentos dos dados de acordo com a necessidade; Foram buscados os valores de CFOPs para descobrir se a NFe era necessária ou não; Foi criado um arquivo txt para salvar a última data da qual foi realizado o download dos xmls;
