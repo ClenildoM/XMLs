@@ -4,7 +4,7 @@ from datetime import datetime
 import pandas as pd
 
 def ToExcel():
-    xml_folder = r'xml_output\55'
+    xml_folder = r'dist\xml_output\55'
     ns = {'nfe': 'http://www.portalfiscal.inf.br/nfe'}
     #timeNow = datetime.today().strftime("%d-%m-%Y_%H-%M-%S")
 
@@ -14,7 +14,8 @@ def ToExcel():
         'Emissao': './/nfe:ide/nfe:dhEmi',
         'NF': './/nfe:ide/nfe:nNF',
         'ChaveNF': './/nfe:protNFe/nfe:infProt/nfe:chNFe',
-        'CFOP': './/nfe:det/nfe:prod/nfe:CFOP'
+        'CFOP': './/nfe:det/nfe:prod/nfe:CFOP',
+        'Serie' : './/nfe:ide/nfe:serie'
     }
 
     xml_lst = [f for f in os.listdir(xml_folder) if f.lower().endswith('.xml')]
