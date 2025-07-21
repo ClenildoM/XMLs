@@ -28,7 +28,7 @@ def DownloadXML():
     File_object = open(r"ultimaData.txt", "w")
     File_object.write(dia_atual)
     if status != "OK" or not data or not data[0]:
-        print("No emails from 2025 or later found.")
+        print(f"No emails from {dia_atual} or later found.")
         mail.logout()
         exit()
 

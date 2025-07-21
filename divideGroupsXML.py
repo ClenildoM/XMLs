@@ -84,6 +84,6 @@ def DivideGroups():
 
     # === Example Usage ===
     process_folder(
-        input_folder=r"C:\Users\ESC-CMO13\Desktop\downloadXML\XMLs\attachments",
+        input_folder="attachments",
         output_base="xml_output"
     )
